@@ -9,5 +9,11 @@ return {
       html = { "prettier" },
       htmldjango = { "djlint" },
     },
+
+    formatters = {
+      black = {
+        args = { "--line-length", "80", "-" },
+      },
+    },
   },
 }
