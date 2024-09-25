@@ -115,10 +115,6 @@ alias ll="ls -al"
 alias glb="git log --graph --simplify-by-decoration --pretty=format:'%d' --all"
 
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source .local/bin/virtualenvwrapper.sh
-
 eval `dircolors /home/yousef/.dir_colors/dircolors`
 
 export NVM_DIR="$HOME/.nvm"
@@ -139,3 +135,6 @@ export PATH="$PATH:/home/yousef/Projects/flutter/bin"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
