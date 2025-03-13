@@ -112,7 +112,7 @@ config.keys = {
 }
 -- For example, changing the color scheme:
 -- config.color_scheme = "Solarized Dark (Gogh)"
-config.color_scheme = "tokyonight"
+config.color_scheme = "Tokyo Night"
 -- config.color_scheme = 'Dracula (Official)'
 
 -- config.enable_tab_bar = false
