@@ -64,6 +64,11 @@ config.keys = {
 	},
 
 	{
+		key = "x",
+		mods = "LEADER",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+	{
 		key = "p",
 		mods = "LEADER",
 		action = wezterm.action.ActivateTabRelative(-1),
