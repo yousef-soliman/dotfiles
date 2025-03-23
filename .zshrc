@@ -40,6 +40,8 @@ zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::history
+zinit snippet OMZP::fzf
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -51,6 +53,10 @@ zinit cdreplay -q
 
 # Keybindings
 bindkey -e
+bindkey '^[[A' history-beginning-search-backward  # Up arrow
+bindkey '^[[B' history-beginning-search-forward   # Down arrow
+bindkey '^[[C' end-of-line  # Right arrow moves to end of line (accepts command)
+bindkey '^E' accept-line                           # Alternative: Enter to execute the command
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
