@@ -42,6 +42,7 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::history
 zinit snippet OMZP::fzf
+zinit snippet OMZP::direnv
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -56,6 +57,7 @@ bindkey -e
 bindkey '^[[A' history-beginning-search-backward  # Up arrow
 bindkey '^[[B' history-beginning-search-forward   # Down arrow
 bindkey '^[[C' end-of-line  # Right arrow moves to end of line (accepts command)
+bindkey '^[[1;5C' end-of-line # CNTR + Right arrow moves to end of line 
 bindkey '^E' accept-line                           # Alternative: Enter to execute the command
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
