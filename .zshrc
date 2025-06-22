@@ -42,7 +42,6 @@ zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::history
 zinit snippet OMZP::fzf
-zinit snippet OMZP::direnv
 
 # Load completions
 autoload -Uz compinit && compinit
