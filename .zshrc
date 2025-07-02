@@ -56,11 +56,13 @@ bindkey -e
 bindkey '^[[A' history-beginning-search-backward  # Up arrow
 bindkey '^[[B' history-beginning-search-forward   # Down arrow
 bindkey '^[[C' end-of-line  # Right arrow moves to end of line (accepts command)
-bindkey '^[[1;5C' end-of-line # CNTR + Right arrow moves to end of line 
+bindkey '^[[1;5D' backward-word   # Ctrl + LeftArrow
+bindkey '^[[1;5C' forward-word    # Ctrl + RightArrow
 bindkey '^E' accept-line                           # Alternative: Enter to execute the command
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
+bindkey '^A' beginning-of-line  # Ctrl + A moves to beginning of line
 
 # History
 HISTSIZE=5000
