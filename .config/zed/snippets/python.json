@@ -1,0 +1,9 @@
+{
+  "PDB Debug": {
+      "prefix": "pdb",
+      "body": [
+        "import pdb; pdb.set_trace()$0"
+      ],
+      "description": "Insert Python pdb debug breakpoint"
+    },
+}
