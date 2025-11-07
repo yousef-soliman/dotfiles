@@ -39,7 +39,7 @@
   "ui_font_family": "MesloLGS NF",
   "buffer_font_size": 13, // Font size for editor buffers
   "buffer_font_family": "MesloLGS NF",
-  "agent_font_size": 13,
+  "agent_ui_font_size": 13,
 
   "vim": {
     "use_system_clipboard": "always"
