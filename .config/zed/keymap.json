@@ -210,8 +210,6 @@
     "bindings": {
       "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
       "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
-      "n": ["workspace::SendKeystrokes", "n z z z v"],
-      "shift-n": ["workspace::SendKeystrokes", "shift-n z z z v"],
       "shift-g": ["workspace::SendKeystrokes", "shift-g z z"],
       "g r": "editor::FindAllReferences"
     }
