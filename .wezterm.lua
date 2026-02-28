@@ -101,7 +101,7 @@ config.keys = {
 
 	-- action full screen
 	{
-		key = "F11",
+		key = "F10",
 		action = wezterm.action.ToggleFullScreen,
 	},
 	-- move between split panes
@@ -126,7 +126,7 @@ config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
 
-config.font_size = 10
+config.font_size = 12
 
 config.window_close_confirmation = "NeverPrompt"
 config.show_new_tab_button_in_tab_bar = false
