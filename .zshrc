@@ -41,6 +41,7 @@ zinit snippet OMZP::pyenv
 zinit snippet OMZP::bun
 zinit snippet OMZP::uv
 zinit snippet OMZP::gh
+zinit snippet OMZP::tmux
 zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::safe-paste
