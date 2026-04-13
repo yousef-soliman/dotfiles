@@ -126,7 +126,8 @@ config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.window_decorations = "RESIZE"
 
-config.font_size = 12
+config.font = wezterm.font("MesloLGS NF")
+config.font_size = 13
 
 config.window_close_confirmation = "NeverPrompt"
 config.show_new_tab_button_in_tab_bar = false
@@ -139,7 +140,7 @@ config.window_padding = {
 
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 
-tabline.setup({ theme = "GruvboxDark" })
+tabline.setup({ theme = "Tokyo Night" })
 
 -- and finally, return the configuration to wezterm
 return config

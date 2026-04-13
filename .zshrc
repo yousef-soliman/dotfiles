@@ -31,18 +31,34 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-history-substring-search
+zinit light MichaelAquilina/zsh-you-should-use
+zinit light wfxr/forgit
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::history
 zinit snippet OMZP::fzf
+zinit snippet OMZP::macos
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::golang
+zinit snippet OMZP::pyenv
+zinit snippet OMZP::bun
+zinit snippet OMZP::uv
+zinit snippet OMZP::gh
+zinit snippet OMZP::tmux
+zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::safe-paste
+zinit snippet OMZP::extract
+zinit snippet OMZP::copypath
+zinit snippet OMZP::ssh
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -54,19 +70,19 @@ zinit cdreplay -q
 
 # Keybindings
 bindkey -e
-bindkey '^[[A' history-beginning-search-backward  # Up arrow
-bindkey '^[[B' history-beginning-search-forward   # Down arrow
-bindkey '^[[C' end-of-line  # Right arrow moves to end of line (accepts command)
+bindkey '^[[A' history-substring-search-up    # Up arrow
+bindkey '^[[B' history-substring-search-down  # Down arrow
+bindkey '^[[C' forward-char  # Right arrow moves cursor right (accepts suggestion at end of line)
 bindkey '^[[1;5D' backward-word   # Ctrl + LeftArrow
-bindkey '^[[1;5C' forward-word    # Ctrl + RightArrow
+bindkey '^[[1;5C' end-of-line      # Ctrl + RightArrow
 bindkey '^E' accept-line                           # Alternative: Enter to execute the command
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
 bindkey '^[w' kill-region
 bindkey '^A' beginning-of-line  # Ctrl + A moves to beginning of line
 
 # History
-HISTSIZE=5000
+HISTSIZE=50000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -99,27 +115,22 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
-export PATH=$PATH:/usr/local/go/bin
+[[ -d /usr/local/go/bin ]] && export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-export FZF_BASE=/usr/bin/fzf
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+export FZF_BASE=/opt/homebrew/bin/fzf
 
 . "$HOME/.local/bin/env"
-
-source $HOME/.local/bin/env
 
 export EDITOR='nvim'
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Lazy-load nvm to avoid slow shell startup
+nvm() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"; nvm "$@" }
+node() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; node "$@" }
+npm() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npm "$@" }
+npx() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npx "$@" }
 
 
 # pnpm
@@ -133,9 +144,8 @@ esac
 # opencode
 export PATH=/Users/yousefsoliman/.opencode/bin:$PATH
 
-# bun completions
-[ -s "/Users/yousefsoliman/.bun/_bun" ] && source "/Users/yousefsoliman/.bun/_bun"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+[[ -s "/Users/yousefsoliman/.gvm/scripts/gvm" ]] && source "/Users/yousefsoliman/.gvm/scripts/gvm"
