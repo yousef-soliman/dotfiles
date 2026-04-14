@@ -117,8 +117,7 @@ config.keys = {
 }
 -- For example, changing the color scheme:
 -- config.color_scheme = "Solarized Dark (Gogh)"
-config.color_scheme = "Tokyo Night"
--- config.color_scheme = 'Dracula (Official)'
+config.color_scheme = "Catppuccin Mocha"
 
 -- config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
@@ -140,7 +139,7 @@ config.window_padding = {
 
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 
-tabline.setup({ theme = "Tokyo Night" })
+tabline.setup({ theme = "Catppuccin Mocha" })
 
 -- and finally, return the configuration to wezterm
 return config
