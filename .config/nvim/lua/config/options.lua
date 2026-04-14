@@ -14,6 +14,6 @@
 
 vim.lsp.set_log_level("off")
 
-vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_lsp = "ruff"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
