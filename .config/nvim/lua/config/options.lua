@@ -12,8 +12,6 @@
 --   },
 -- }
 
-vim.lsp.set_log_level("off")
-
-vim.g.lazyvim_python_lsp = "ruff"
+-- vim.g.lazyvim_python_lsp = "pyrgiht"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
-vim.g.lazyvim_python_ruff = "ruff"
+-- vim.g.lazyvim_python_ruff = "ruff"

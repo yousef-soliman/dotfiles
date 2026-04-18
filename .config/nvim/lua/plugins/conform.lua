@@ -8,7 +8,7 @@ return {
       xml = { "xmlformat" },
       html = { "prettier" },
       htmldjango = { "djlint" },
-      python = { "ruff" },
+      python = { "ruff_format" },
     },
 
     formatters = {
