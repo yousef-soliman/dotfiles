@@ -29,6 +29,7 @@ zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::aws
+zinit snippet OMZP::nvm
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
@@ -103,23 +104,11 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
 
-[[ -d /usr/local/go/bin ]] && export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
 export FZF_BASE=/opt/homebrew/bin/fzf
 
 . "$HOME/.local/bin/env"
 
 export EDITOR='nvim'
-
-export NVM_DIR="$HOME/.nvm"
-# Lazy-load nvm to avoid slow shell startup
-nvm() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"; nvm "$@" }
-node() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; node "$@" }
-npm() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npm "$@" }
-npx() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npx "$@" }
-
 
 # pnpm
 export PNPM_HOME="/Users/yousefsoliman/Library/pnpm"
