@@ -29,7 +29,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.editor.telescope" },
     { import = "lazyvim.plugins.extras.editor.aerial" },
     -- { import = "lazyvim.plugins.extras.coding.luasnip" },
-    { import = "lazyvim.plugins.extras.editor.refactoring" },
+    -- { import = "lazyvim.plugins.extras.editor.refactoring" },
     -- { import = "lazyvim.plugins.extras.editor.inc-rename" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- { import = "lazyvim.plugins.extras.formatting.prettier" },
