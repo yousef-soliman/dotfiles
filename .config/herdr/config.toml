@@ -129,6 +129,29 @@ split_horizontal = 'prefix+"'
 # height = "80%"
 #
 
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "smart-splits-backend-herdr.left"
+description = "navigate left (neovim/herdr)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "smart-splits-backend-herdr.down"
+description = "navigate down (neovim/herdr)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "smart-splits-backend-herdr.up"
+description = "navigate up (neovim/herdr)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "smart-splits-backend-herdr.right"
+description = "navigate right (neovim/herdr)"
 
 # Legacy indexed shortcut config is still parsed for compatibility.
 # Prefer switch_tab, switch_workspace, and focus_agent for new configs.
