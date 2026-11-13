@@ -10,8 +10,3 @@ vim.keymap.set("n", "<A-h>", require("smart-splits").resize_left)
 vim.keymap.set("n", "<A-j>", require("smart-splits").resize_down)
 vim.keymap.set("n", "<A-k>", require("smart-splits").resize_up)
 vim.keymap.set("n", "<A-l>", require("smart-splits").resize_right)
-
-vim.keymap.set("n", "<leader>fs", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-
-local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
-vim.keymap.set("n", "<leader>fw", live_grep_args_shortcuts.grep_word_under_cursor)
